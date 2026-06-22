@@ -1,0 +1,44 @@
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; background: #f4eee2; }
+
+.elo-root {
+  --ink: #1f2a2a; --teal: #0e5c57; --teal-2: #16746d; --teal-soft: #cfe5e1;
+  --sand: #f4eee2; --cream: #fcfaf4; --line: #e6ddca; --amber: #c98a1f;
+  --clay: #bd7150; --clay-soft: #f3e2d8; --muted: #7a847f; --alert: #b4452e;
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  color: var(--ink); background: var(--sand); min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+.serif { font-family: 'Lora', Georgia, serif; font-style: italic; }
+.card { background: var(--cream); border: 1px solid var(--line); border-radius: 16px; }
+.rise { animation: rise .34s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .rise { animation: none; } }
+
+.slider { -webkit-appearance: none; appearance: none; height: 8px; border-radius: 99px; outline: none; }
+.slider::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 28px; border-radius: 50%;
+  background: #fff; border: 3px solid currentColor; box-shadow: 0 2px 8px rgba(0,0,0,.18); cursor: pointer; }
+.slider::-moz-range-thumb { width: 28px; height: 28px; border-radius: 50%; background: #fff;
+  border: 3px solid currentColor; box-shadow: 0 2px 8px rgba(0,0,0,.18); cursor: pointer; }
+
+.opt:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--teal); outline-offset: 2px;
+}
+textarea, input { font-family: inherit; }
+
+/* utilitários mínimos (substituem o Tailwind usado no protótipo) */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.text-left { text-align: left; }
+.gap-1 { gap: 4px; }
+.gap-1\.5 { gap: 6px; }
+.gap-2 { gap: 8px; }
+.gap-2\.5 { gap: 10px; }
+.gap-3 { gap: 12px; }
